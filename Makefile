@@ -20,7 +20,7 @@ install:	## Install package
 	pip install .
 
 .PHONY: install-dev
-install-dev:	## Install package with dev and test dependencies and allow code edits to the installed package 
+install-dev:	## Install package with dev and test dependencies and allow code edits to the installed package
 	pip install -e .[test,dev]
 
 .PHONY: install-test
@@ -103,7 +103,7 @@ code-artifact-read-access: get-code-artifact-url	## Login in to AWS Code Artifac
 	# This sets pip index url on a user level
 	@pip config set --user global.extra-index-url https://pypi.org/simple/
 	# This allows us to add the Code Artifact URL with temporary credentials as an extra index
-	@pip config set --user global.index-url $(CODEARTIFACT_URL) 
+	@pip config set --user global.index-url $(CODEARTIFACT_URL)
 
 help:		## Show this help.
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'

@@ -137,4 +137,3 @@ jobs:
 
     - name: Push docker image to AWS ECR
       run: make docker-push
-
