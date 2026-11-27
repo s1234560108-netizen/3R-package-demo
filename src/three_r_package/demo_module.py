@@ -10,3 +10,14 @@ def hello_world(message):
     logger.warning("This is WARN level log message")
     logger.error("This is ERROR level log message")
     return f"Hello world!: {message}"
+
+
+def calculate_yield(passed: int, total: int) -> float:
+    """Calculate the percentage of products that pass inspection."""
+    if total <= 0:
+        raise ValueError("Total must be greater than zero.")
+
+    if passed < 0 or passed > total:
+        raise ValueError("Passed must be between zero and total.")
+
+    return passed / total * 100
